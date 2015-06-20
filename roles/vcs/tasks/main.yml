@@ -1,0 +1,7 @@
+---
+
+- name: Install VCS Packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+      - git
+      - mercurial

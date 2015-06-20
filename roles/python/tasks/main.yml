@@ -1,0 +1,35 @@
+---
+
+- name: install basic python packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python2.7-dev
+    - python3.4-dev
+    - python-crypto
+    - python-setuptools
+    - libxml2-dev
+    - libyaml-dev
+    - libpq-dev
+    - libpq5
+    - python-pip
+    - libxslt-dev
+    - build-essential
+
+- name: Upgrade Modern PIP
+  pip: name=pip version=7.0.3
+
+- name: Install Wheel
+  pip: name=wheel version=0.24.0
+
+- name: Install Modern Virtualenv
+  pip: name=virtualenv version=13.0.3
+
+
+- name: Build Project Virtualenvs Python 3
+  command: virtualenv --python=python3 /home/vagrant/.virtualenvs/drf_demo creates=/home/vagrant/.virtualenvs/drf_demo
+
+- name: Setup Virtualenv Dirs
+  file: path=/home/vagrant/.virtualenvs state=directory owner=vagrant group=vagrant
+
+- name: Ownership of Virtualenvs Python 3
+  file: path=/home/vagrant/.virtualenvs/drf_demo owner=vagrant group=vagrant recurse=yes

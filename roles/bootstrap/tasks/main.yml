@@ -1,0 +1,11 @@
+---
+
+- name: update apt cache
+  apt: update_cache=yes
+
+- name: install core packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - vim
+    - curl
+    - make

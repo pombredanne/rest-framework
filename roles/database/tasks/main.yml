@@ -1,0 +1,15 @@
+---
+
+- name: Install MySQL Packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+      - mysql-server
+      - mysql-client
+      - libmysqlclient-dev
+      - python-mysqldb
+
+- name: Create MySQL DBs
+  mysql_db: name=drf_dev state=present
+
+- name: Establish MySQL User
+  mysql_user: name=drf_dev password=12345 priv=*.*:ALL state=present

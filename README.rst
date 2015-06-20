@@ -1,4 +1,7 @@
-# rest-framework
+==========================
+Django Rest Framework Talk
+==========================
+
 Talk and demo for talk on Django Rest Framework
 
 sudo apt-get update
