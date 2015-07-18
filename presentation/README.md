@@ -13,5 +13,6 @@ Presentation Outline
 - Lets build an API! Start with a demo project and live code.
 - Demo
 - Real world examples (notifications/pulse)
+- AngularJS based applications (Client-server) (demo defekt tracker)
 - Where do we go from here?
 - End
