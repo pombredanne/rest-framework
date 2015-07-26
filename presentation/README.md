@@ -10,6 +10,7 @@ Presentation Outline
 - Frameworks for Django (Tastypie, DRF, Piston, etc.)
 - History/Brief rundown of each.
 - Why DRF?, Ease of use, scalability, reliable, standard?
+- Browsebale API Demo
 - Lets build an API! Start with a demo project and live code.
 - Demo
 - Real world examples (notifications/pulse)
