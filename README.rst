@@ -16,8 +16,10 @@ provided.
 Setup With Ansible
 ^^^^^^^^^^^^^^^^^^
 
+- Clone this repo
 - Install `Vagrant <https://www.vagrantup.com>`_
 - Install `Ansible <http://www.ansible.com/home>`_
+- From inside this directory
 
 ::
 
