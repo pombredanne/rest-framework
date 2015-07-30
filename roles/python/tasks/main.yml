@@ -16,13 +16,13 @@
     - build-essential
 
 - name: Upgrade Modern PIP
-  pip: name=pip version=7.0.3
+  pip: name=pip version=7.1.0
 
 - name: Install Wheel
   pip: name=wheel version=0.24.0
 
 - name: Install Modern Virtualenv
-  pip: name=virtualenv version=13.0.3
+  pip: name=virtualenv version=13.1.0
 
 
 - name: Build Project Virtualenvs Python 3
