@@ -16,8 +16,8 @@ provided.
 Setup With Ansible
 ^^^^^^^^^^^^^^^^^^
 
-- Install `Vagrant <https://www.vagrantup.com>`
-- Install `Ansible <http://www.ansible.com/home>`
+- Install `Vagrant <https://www.vagrantup.com>`_
+- Install `Ansible <http://www.ansible.com/home>`_
 
 ::
 
