@@ -42,7 +42,7 @@
                     <h1>Django Rest Framework</h1>
                     <h3>Building Beautiful APIS</h3>
                     <p>
-                        <small>Created by <a href="http://derek.stegelman.com">Derek Stegelman</a> / <a href="http://twitter.com/derekstegelman">@derekstegelman</a></small>
+                        <small><a href="http://derek.stegelman.com">Derek Stegelman</a> / <a href="http://twitter.com/derekstegelman">@derekstegelman</a></small>
                     </p>
                 </section>
 
@@ -54,7 +54,7 @@
                 </section>
 
                 <section>
-                    <h1>What is an API?
+                    <h1>What is an API?</h1>
                 </section>
 
                 <section>
@@ -63,16 +63,13 @@
                     <p>Allows communication between components and systems.</p>
                     <p>A web based API is simply one example of an API.</p>
                 </section>
-
                 <section>
-                    <h1>Why do I need an API?</h1>
-                </section>
-                <section>
+                    <h2>Why do I need an API?</h2>
                     <ul>
-                        <li>Allow other websites/apps to interact with your data</li>
-                        <li>Build "microsites" with tools like AngularJS (front end frameworks)</li>
-                        <li>Build apps for Phones or other devices for your core product</li>
-                        <li>Web becomes a platform like Desktop, Phone, etc</li>
+                        <li class='fragment'>Allow other websites/apps to interact with your data</li>
+                        <li class='fragment'>Build "microsites" with tools like AngularJS (front end frameworks)</li>
+                        <li class='fragment'>Build apps for Phones or other devices for your core product</li>
+                        <li class='fragment'>Web becomes a platform like Desktop, Phone, etc</li>
                     </ul>
                 </section>
                 <section>
@@ -81,10 +78,11 @@
 
                 <section>
                     <h3>Representational State Transfer (REST)</h3>
-                    <p>High performance, sacalable web services</p>
-                    <p>Focus on HTTP verbs</p>
-                    <p>Using the web as it was intended</p>
-                    <p>Next evoltuion from SOAP based services</p>
+                    <ul>
+                        <li class='fragment'>High performance, sacalable web services</li>
+                        <li class='fragment'>Focus on HTTP verbs</li>
+                        <li class='fragment'>Using the web as intended</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -101,10 +99,11 @@
                 </section>
 
                 <section>
-                    <p>It's simple, its just HTTP</p>
-                    <p>Easy integration, just make a HTTP request</p>
-                    <p>Easily predictable</p>
-                    <p>Easy standard to get behind, has wide adoption</p>
+                    <h3>RESTful APIs</h3>
+                    <p class='fragment'>It's simple, its just HTTP</p>
+                    <p class='fragment'>Easy integration, just make a HTTP request</p>
+                    <p class='fragment'>Easily predictable</p>
+                    <p class='fragment'>Easy standard to get behind, has wide adoption</p>
                 </section>
 
                 <section>
@@ -130,7 +129,6 @@
                     <blockquote cite='http://www.django-rest-framework.org'>
                         Django REST framework is a powerful and flexible toolkit that makes it easy to build Web APIs.
                     </blockquote>
-                    <a href="http://www.django-rest-framework.org/">DRF</a>
                 </section>
 
                 <section>
@@ -138,25 +136,23 @@
                 </section>
 
                 <section>
+                    <h3>Django Rest Framework</h3>
                     <ul>
-                        <li>The Web browsable API is a huge usability win for your developers.</li>
-                        <li>Authentication policies including packages for OAuth1a and OAuth2.</li>
-                        <li>Serialization that supports both ORM and non-ORM data sources.</li>
-                        <li>Customizable all the way down - just use regular function-based views if you don't need the more powerful features.</li>
-                        <li>Extensive documentation, and great community support.</li>
-                        <li>Used and trusted by large companies such as Mozilla and Eventbrite.</li>
+                        <li class='fragment'>Browsebale API</li>
+                        <li class='fragment'>Authentication and Authorization Policies</li>
+                        <li class='fragment'>Serialization that supports both ORM and non-ORM data sources.</li>
+                        <li class='fragment'>Customizable</li>
+                        <li class='fragment'>Extensive documentation, and great community support.</li>
+                        <li class='fragment'>Used and trusted by large companies such as Mozilla and Eventbrite.</li>
                     </ul>
                 </section>
-
                 <section>
                     <h2>Browseable API</h2>
                     <h4>What and Why?</h4>
-                </section>
-                <section>
                     <ul>
-                        <li>A browsebale API allows users to view and make calls to your API through a web interface</li>
-                        <li>Gathers buy in for your product</li>
-                        <li>Makes life easier for those consuming the API, and cuts support time for developers</li>
+                        <li class='fragment'>A browsebale API allows users to view and make calls to your API through a web interface</li>
+                        <li class='fragment'>Gathers buy in for your product</li>
+                        <li class='fragment'>Makes life easier for those consuming the API, and cuts down on support time for developers</li>
                     </ul>
                 </section>
                 <section>
@@ -164,7 +160,37 @@
                 </section>
 
                 <section>
-                    <h3>Demo/Live Code</h3>
+                    <h3>Authentication and Authorization</h3>
+                    <ul>
+                        <li class='fragment'>Built in support for Token, Basic and Session.</li>
+                        <li class='fragment'>Community packages for Oauth, Oauth2, JSON Web Token, others</li>
+                        <li class='fragment'>Built in ORM based permissions (actions on Django models)</li>
+                        <li class='fragment'>Easy to build in custom permissions per view, etc</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Serialization</h3>
+                    <ul>
+                        <li class='fragment'>Built in serialization of Django/ORM objects</li>
+                        <li class='fragment'>Easy customization and extension of serializers</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Serializers</h3>
+                    <pre><code data-trim contenteditable>
+                        class AreaSerializer(serializers.ModelSerializer):
+    campus_organization = serializers.SerializerMethodField()
+
+    def get_campus_organization(self, obj):
+        return obj.student_organization
+
+    class Meta:
+        model = Area
+        fields = ('name', 'slug', 'url', 'campus_organization')
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Views/Demo/Live Code</h3>
                 </section>
 
                 <section>
