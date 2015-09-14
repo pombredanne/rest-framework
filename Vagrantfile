@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "./demo", "/home/vagrant/demo"
 
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 8000, host: 8080
   config.ssh.forward_agent = true
 
   config.vm.host_name = 'rest-framework-demo'
@@ -17,7 +17,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "developer.yml"
     ansible.host_key_checking = false
-    #ansible.verbose = 'v'
 
     ansible.groups = {
           "developer" => ["default"],

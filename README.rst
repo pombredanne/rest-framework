@@ -51,6 +51,10 @@ Change dir to the demo directory::
 
     cd demo
 
+Install Demo dependencies::
+
+    pip install -r requirements.txt
+
 Do the initial migration::
 
     ./manage.py migrate
@@ -63,4 +67,4 @@ Run the server::
 
     ./manage.py runserver 0.0.0.0:8000
 
-Open up a browser and point it to localhost:8000 to view the site!
+Open up a browser and point it to localhost:8080/api/movies/ to view the site!

@@ -16,13 +16,13 @@
     - build-essential
 
 - name: Upgrade Modern PIP
-  pip: name=pip version=7.1.0
+  pip: name=pip version=7.1.2
 
 - name: Install Wheel
   pip: name=wheel version=0.24.0
 
 - name: Install Modern Virtualenv
-  pip: name=virtualenv version=13.1.0
+  pip: name=virtualenv version=13.1.2
 
 - name: Build Project Virtualenvs Python 3
   command: virtualenv --python=python3 /home/vagrant/.virtualenvs/drf_demo creates=/home/vagrant/.virtualenvs/drf_demo

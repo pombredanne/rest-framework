@@ -19,7 +19,7 @@ def api_root(request, format=None):
 
     movie_directory = {
         'movies': reverse('api-movies-list', request=request, format=format),
-        'movie_by_id': reverse('api-movies-detail', args=['1'], request=request, format=format),
+        'movie_by_id': reverse('api-movie-detail', args=['1'], request=request, format=format),
         'actors': reverse('api-actors-list', request=request, format=format),
         'actor_by_id': reverse('api-actor-detail', args=['1'], request=request, format=format)
     }
