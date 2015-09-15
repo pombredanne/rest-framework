@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 class ActorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Actor
+        fields = ('name', 'date_of_birth')
 
 
 class MovieSerializer(serializers.ModelSerializer):
